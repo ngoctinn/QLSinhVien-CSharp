@@ -1,0 +1,242 @@
+﻿<Page x:Class="QLSinhVien_CSharp.Views.SinhVienPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:QLSinhVien_CSharp"
+      mc:Ignorable="d" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      Background="Transparent"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="12"
+      FontFamily="{materialDesign:MaterialDesignFont}"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="LoaiSanPhamPage">
+
+    <Border Background="White" BorderBrush="Black" BorderThickness="0" CornerRadius="20">
+        <Grid  Margin="15 15 15 15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Margin="15,0,0,0" Grid.Row="0"  TextAlignment="Left" FontSize="30" FontWeight="Bold">Sinh Viên</TextBlock>
+            <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Left" Margin="15 0 0  0">
+                <Button
+                x:Name="ThemLoaiSanPham"
+                Background="#FFFF4081"
+                Height="30"
+                Width="160"
+                materialDesign:ButtonAssist.CornerRadius="5"
+                Style="{StaticResource MaterialDesignFlatSecondaryLightBgButton}"
+                ToolTip="MaterialDesignRaisedButton with Round Corners">
+                    <TextBlock Text="Thêm loại sản phẩm" Foreground="White"/>
+                </Button>
+                <Button
+              Width="100"
+              Height="30"
+              Margin="5 0 0 0 "
+              Background="Transparent"
+              Content="Xuất excel"
+              materialDesign:ButtonAssist.CornerRadius="5"
+              Style="{StaticResource MaterialDesignPaperLightButton}"
+              ToolTip="Resource name: MaterialDesignPaperLightButton" />
+                <ComboBox
+                materialDesign:HintAssist.Hint="(float hint)"
+                Margin="10 0 0 2"
+                Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                    <ComboBoxItem Content="Item 1" />
+                    <ComboBoxItem Content="Item 2" />
+                    <ComboBoxItem Content="Item 3" />
+                </ComboBox>
+            </StackPanel>
+
+            <!--Seprator-->
+            <Separator  Height="1" Grid.Row="1" Background="#DAE2EA" Margin="0 5 0 5"/>
+
+            <!--Filter Textbox-->
+
+
+            <StackPanel Margin="0 0 15 0" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal" FlowDirection="LeftToRight">
+                <TextBox
+                x:Name="timKiemLoaiSanPham"
+                Panel.ZIndex="1"
+                Height="50"
+                Width="500"
+                FontSize="16"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                materialDesign:HintAssist.Hint="Nhập sản phẩm cần tìm"
+              Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            </StackPanel>
+
+            <DataGrid
+                Height="200"
+                CellStyle="{DynamicResource DataGridCellStyle1}"
+                Padding="0 15 0 0"
+                CanUserAddRows="False"
+                Background="White"
+                ItemsSource="{Binding LoaiSanPhams}"
+                Style="{StaticResource MaterialDesignDataGrid}"
+                AutoGenerateColumns="False"
+                TextBlock.TextAlignment="Center"
+                Grid.Row="4"
+                RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" x:Name="SinhVienDataGrid" Grid.ColumnSpan="2">
+                <DataGrid.Columns>
+                    <!-- Checkbox -->
+                    <DataGridCheckBoxColumn Header="C" CanUserResize="False" Width="auto">
+                        <DataGridCheckBoxColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </DataTemplate>
+                        </DataGridCheckBoxColumn.HeaderTemplate>
+                    </DataGridCheckBoxColumn>
+                    <!-- Mã sinh viên -->
+                    <DataGridTextColumn Header="Mã sinh viên" Binding="{Binding MaSinhVien}" IsReadOnly="True" Width="*">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                                <Setter Property="VerticalAlignment" Value="Center" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <!-- Họ -->
+                    <DataGridTextColumn Header="Họ" Binding="{Binding Ho}" IsReadOnly="True" Width="*">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                                <Setter Property="VerticalAlignment" Value="Center" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <!-- Tên -->
+                    <DataGridTextColumn Header="Tên" Binding="{Binding Ten}" IsReadOnly="True" Width="*">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                                <Setter Property="VerticalAlignment" Value="Center" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <!-- Phái -->
+                    <DataGridTextColumn Header="Phái" Binding="{Binding Phai}" IsReadOnly="True" Width="*">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                                <Setter Property="VerticalAlignment" Value="Center" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <!-- Địa chỉ -->
+                    <DataGridTextColumn Header="Địa chỉ" Binding="{Binding DiaChi}" IsReadOnly="True" Width="*">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                                <Setter Property="VerticalAlignment" Value="Center" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <!-- Ngày Sinh -->
+                    <DataGridTextColumn Header="Ngày Sinh" Binding="{Binding NgaySinh}" IsReadOnly="True" Width="*">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                                <Setter Property="VerticalAlignment" Value="Center" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <!-- Mã lớp -->
+                    <DataGridTextColumn Header="Mã lớp" Binding="{Binding MaLop}" IsReadOnly="True" Width="*">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                                <Setter Property="VerticalAlignment" Value="Center" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <!-- Trạng thái -->
+                    <DataGridTextColumn Header="Trạng thái" Binding="{Binding TrangThai}" IsReadOnly="True" Width="*">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                                <Setter Property="VerticalAlignment" Value="Center" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+            <DataGrid
+                    Height="200"
+                    CellStyle="{DynamicResource DataGridCellStyle1}"
+                    Padding="0 15 0 0"
+                    CanUserAddRows="False"
+                    Background="White"
+                    ItemsSource="{Binding LoaiSanPhams}"
+                    Style="{StaticResource MaterialDesignDataGrid}"
+                    AutoGenerateColumns="False"
+                    TextBlock.TextAlignment="Center"
+                    Grid.Column="1"
+                    RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" x:Name="LopHocDataGrid" Grid.ColumnSpan="2" >
+                <DataGrid.Columns>
+                    <!--Checkbox-->
+                    <DataGridCheckBoxColumn  Header="C" CanUserResize="False" Width="auto" >
+                        <DataGridCheckBoxColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <CheckBox  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </DataTemplate>
+                        </DataGridCheckBoxColumn.HeaderTemplate>
+                    </DataGridCheckBoxColumn>
+
+                    <!-- Mã lớp -->
+                    <DataGridTextColumn Header="Mã lớp" Binding="{Binding MaLop}" IsReadOnly="True" Width="*">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                                <Setter Property="VerticalAlignment" Value="Center" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <!-- Tên lớp -->
+                    <DataGridTextColumn Header="Tên lớp" Binding="{Binding TenLop}" IsReadOnly="True" Width="*">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                                <Setter Property="VerticalAlignment" Value="Center" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <!-- Khóa học -->
+                    <DataGridTextColumn Header="Khóa học" Binding="{Binding KhoaHoc}" IsReadOnly="True" Width="*">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                                <Setter Property="VerticalAlignment" Value="Center" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <!-- Mã khoa -->
+                    <DataGridTextColumn Header="Mã khoa" Binding="{Binding MaKhoa}" IsReadOnly="True" Width="*">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                                <Setter Property="VerticalAlignment" Value="Center" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            </Grid>
+        </Grid>
+    </Border>
+</Page>

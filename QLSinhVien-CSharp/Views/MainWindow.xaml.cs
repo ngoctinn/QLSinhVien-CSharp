@@ -167,7 +167,7 @@ namespace QLSinhVien_CSharp.Views
 
         private void btnSinhVien_Click(object sender, RoutedEventArgs e)
         {
-            fContainer.Navigate(new System.Uri("Views/Home.xaml", UriKind.RelativeOrAbsolute));
+            fContainer.Navigate(new System.Uri("Views/SinhVienPage.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void btnLopHoc_Click(object sender, RoutedEventArgs e)
