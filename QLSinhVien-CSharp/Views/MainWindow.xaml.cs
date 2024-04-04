@@ -24,190 +24,125 @@ namespace QLSinhVien_CSharp.Views
         {
             InitializeComponent();
         }
-        private void btnThongKe_MouseEnter(object sender, MouseEventArgs e)
+        private void btnSinhVien_MouseEnter(object sender, MouseEventArgs e)
         {
             if (Tg_Btn.IsChecked == false)
             {
-                Popup.PlacementTarget = btnThongKe;
+                Popup.PlacementTarget = btnSinhVien;
                 Popup.Placement = PlacementMode.Right;
                 Popup.IsOpen = true;
-                Header.PopupText.Text = "Home";
+                Header.PopupText.Text = "Sinh Viên";
             }
         }
 
-        private void btnThongKe_MouseLeave(object sender, MouseEventArgs e)
+        private void btnSinhVien_MouseLeave(object sender, MouseEventArgs e)
         {
             Popup.Visibility = Visibility.Collapsed;
             Popup.IsOpen = false;
         }
 
-        private void btnSanPham_MouseEnter(object sender, MouseEventArgs e)
+        private void btnLopHoc_MouseEnter(object sender, MouseEventArgs e)
         {
             if (Tg_Btn.IsChecked == false)
             {
-                Popup.PlacementTarget = btnSanPham;
+                Popup.PlacementTarget = btnLopHoc;
                 Popup.Placement = PlacementMode.Right;
                 Popup.IsOpen = true;
-                Header.PopupText.Text = "Sản phẩm";
+                Header.PopupText.Text = "Lớp học";
             }
         }
 
-        private void btnSanPham_MouseLeave(object sender, MouseEventArgs e)
+        private void btnLopHoc_MouseLeave(object sender, MouseEventArgs e)
         {
             Popup.Visibility = Visibility.Collapsed;
             Popup.IsOpen = false;
         }
 
-        private void btnBanHang_MouseEnter(object sender, MouseEventArgs e)
+        private void btnMonHoc_MouseEnter(object sender, MouseEventArgs e)
         {
             if (Tg_Btn.IsChecked == false)
             {
-                Popup.PlacementTarget = btnBanHang;
+                Popup.PlacementTarget = btnMonHoc;
                 Popup.Placement = PlacementMode.Right;
                 Popup.IsOpen = true;
-                Header.PopupText.Text = "Bán hàng";
+                Header.PopupText.Text = "Môn học";
             }
         }
 
-        private void btnBanHang_MouseLeave(object sender, MouseEventArgs e)
+        private void btnMonHoc_MouseLeave(object sender, MouseEventArgs e)
         {
             Popup.Visibility = Visibility.Collapsed;
             Popup.IsOpen = false;
         }
 
-        private void btnLoaiSanPham_MouseEnter(object sender, MouseEventArgs e)
+        private void btnLopTinChi_MouseEnter(object sender, MouseEventArgs e)
         {
             if (Tg_Btn.IsChecked == false)
             {
-                Popup.PlacementTarget = btnLoaiSanPham;
+                Popup.PlacementTarget = btnLopTinChi;
                 Popup.Placement = PlacementMode.Right;
                 Popup.IsOpen = true;
-                Header.PopupText.Text = "Loại sản phẩm";
+                Header.PopupText.Text = "Lớp tín chỉ";
             }
         }
 
-        private void btnLoaiSanPham_MouseLeave(object sender, MouseEventArgs e)
+        private void btnLopTinChi_MouseLeave(object sender, MouseEventArgs e)
         {
             Popup.Visibility = Visibility.Collapsed;
             Popup.IsOpen = false;
         }
 
-        private void btnKhachHang_MouseEnter(object sender, MouseEventArgs e)
+        private void btnDiem_MouseEnter(object sender, MouseEventArgs e)
         {
             if (Tg_Btn.IsChecked == false)
             {
-                Popup.PlacementTarget = btnKhachHang;
+                Popup.PlacementTarget = btnDiem;
                 Popup.Placement = PlacementMode.Right;
                 Popup.IsOpen = true;
-                Header.PopupText.Text = "Khách hàng";
+                Header.PopupText.Text = "Điểm";
             }
         }
 
-        private void btnKhachHang_MouseLeave(object sender, MouseEventArgs e)
+        private void btnDiem_MouseLeave(object sender, MouseEventArgs e)
         {
             Popup.Visibility = Visibility.Collapsed;
             Popup.IsOpen = false;
         }
-        private void btnKhuyenMai_MouseEnter(object sender, MouseEventArgs e)
+        private void btnHocPhi_MouseEnter(object sender, MouseEventArgs e)
         {
             if (Tg_Btn.IsChecked == false)
             {
-                Popup.PlacementTarget = btnKhachHang;
+                Popup.PlacementTarget = btnDiem;
                 Popup.Placement = PlacementMode.Right;
                 Popup.IsOpen = true;
-                Header.PopupText.Text = "Khuyến mãi";
+                Header.PopupText.Text = "Học Phí";
             }
         }
 
-        private void btnKhuyenMai_MouseLeave(object sender, MouseEventArgs e)
-        {
-            Popup.Visibility = Visibility.Collapsed;
-            Popup.IsOpen = false;
-        }
-
-        private void btnKhoHang_MouseEnter(object sender, MouseEventArgs e)
-        {
-            if (Tg_Btn.IsChecked == false)
-            {
-                Popup.PlacementTarget = btnKhoHang;
-                Popup.Placement = PlacementMode.Right;
-                Popup.IsOpen = true;
-                Header.PopupText.Text = "Kho Hàng";
-            }
-        }
-
-        private void btnKhoHang_MouseLeave(object sender, MouseEventArgs e)
+        private void btnHocPhi_MouseLeave(object sender, MouseEventArgs e)
         {
             Popup.Visibility = Visibility.Collapsed;
             Popup.IsOpen = false;
         }
 
-        private void btnHoaDon_MouseEnter(object sender, MouseEventArgs e)
+        private void btnDangKi_MouseEnter(object sender, MouseEventArgs e)
         {
             if (Tg_Btn.IsChecked == false)
             {
-                Popup.PlacementTarget = btnHoaDon;
+                Popup.PlacementTarget = btnDangKi;
                 Popup.Placement = PlacementMode.Right;
                 Popup.IsOpen = true;
-                Header.PopupText.Text = "Poin Of Sale";
+                Header.PopupText.Text = "Đăng kí";
             }
         }
 
-        private void btnHoaDon_MouseLeave(object sender, MouseEventArgs e)
+        private void btnDangKi_MouseLeave(object sender, MouseEventArgs e)
         {
             Popup.Visibility = Visibility.Collapsed;
             Popup.IsOpen = false;
         }
 
-        private void btnNhapKho_MouseEnter(object sender, MouseEventArgs e)
-        {
-            if (Tg_Btn.IsChecked == false)
-            {
-                Popup.PlacementTarget = btnNhapKho;
-                Popup.Placement = PlacementMode.Right;
-                Popup.IsOpen = true;
-                Header.PopupText.Text = "Nhập Kho";
-            }
-        }
-
-        private void btnNhapKho_MouseLeave(object sender, MouseEventArgs e)
-        {
-            Popup.Visibility = Visibility.Collapsed;
-            Popup.IsOpen = false;
-        }
-        private void btnXuatKho_MouseEnter(object sender, MouseEventArgs e)
-        {
-            if (Tg_Btn.IsChecked == false)
-            {
-                Popup.PlacementTarget = btnXuatKho;
-                Popup.Placement = PlacementMode.Right;
-                Popup.IsOpen = true;
-                Header.PopupText.Text = "Xuất Kho";
-            }
-        }
-
-        private void btnXuatKho_MouseLeave(object sender, MouseEventArgs e)
-        {
-            Popup.Visibility = Visibility.Collapsed;
-            Popup.IsOpen = false;
-        }
-
-        private void btnTaiKhoan_MouseEnter(object sender, MouseEventArgs e)
-        {
-            if (Tg_Btn.IsChecked == false)
-            {
-                Popup.PlacementTarget = btnTaiKhoan;
-                Popup.Placement = PlacementMode.Right;
-                Popup.IsOpen = true;
-                Header.PopupText.Text = "Tài khoản";
-            }
-        }
-
-        private void btnTaiKhoan_MouseLeave(object sender, MouseEventArgs e)
-        {
-            Popup.Visibility = Visibility.Collapsed;
-            Popup.IsOpen = false;
-        }
+        
         // End: MenuLeft PopupButton //
 
         // Start: Button Close | Restore | Minimize 
@@ -230,34 +165,34 @@ namespace QLSinhVien_CSharp.Views
         }
         // End: Button Close | Restore | Minimize
 
-        private void btnThongKe_Click(object sender, RoutedEventArgs e)
+        private void btnSinhVien_Click(object sender, RoutedEventArgs e)
         {
             fContainer.Navigate(new System.Uri("Views/Home.xaml", UriKind.RelativeOrAbsolute));
         }
 
-        private void btnSanPham_Click(object sender, RoutedEventArgs e)
+        private void btnLopHoc_Click(object sender, RoutedEventArgs e)
         {
-            fContainer.Navigate(new System.Uri("Views/SanPhamPage.xaml", UriKind.RelativeOrAbsolute));
+            fContainer.Navigate(new System.Uri("Views/LopHocPage.xaml", UriKind.RelativeOrAbsolute));
         }
-        private void btnBanHang_Click(object sender, RoutedEventArgs e)
+        private void btnMonHoc_Click(object sender, RoutedEventArgs e)
         {
-            fContainer.Navigate(new System.Uri("Views/BanHangPage.xaml", UriKind.RelativeOrAbsolute));
+            fContainer.Navigate(new System.Uri("Views/MonHocPage.xaml", UriKind.RelativeOrAbsolute));
         }
-        private void btnLoaiSanPham_Click(object sender, RoutedEventArgs e)
+        private void btnLopTinChi_Click(object sender, RoutedEventArgs e)
         {
-            fContainer.Navigate(new System.Uri("Views/LoaiSanPhamPage.xaml", UriKind.RelativeOrAbsolute));
+            fContainer.Navigate(new System.Uri("Views/LopTinChiPage.xaml", UriKind.RelativeOrAbsolute));
         }
-        private void btnKhachHang_Click(object sender, RoutedEventArgs e)
+        private void btnDiem_Click(object sender, RoutedEventArgs e)
         {
-            fContainer.Navigate(new System.Uri("Views/KhachHangPage.xaml", UriKind.RelativeOrAbsolute));
+            fContainer.Navigate(new System.Uri("Views/DiemPage.xaml", UriKind.RelativeOrAbsolute));
         }
-        private void btnKhuyenMai_Click(object sender, RoutedEventArgs e)
+        private void btnHocPhi_Click(object sender, RoutedEventArgs e)
         {
-            fContainer.Navigate(new System.Uri("Views/KhuyenMaiPage.xaml", UriKind.RelativeOrAbsolute));
+            fContainer.Navigate(new System.Uri("Views/HocPhiPage.xaml", UriKind.RelativeOrAbsolute));
         }
-        private void btnKhoHang_Click(object sender, RoutedEventArgs e)
+        private void btnDangKi_Click(object sender, RoutedEventArgs e)
         {
-            fContainer.Navigate(new System.Uri("Views/KhoHangPage.xaml", UriKind.RelativeOrAbsolute));
+            fContainer.Navigate(new System.Uri("Views/DangKiPage.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }
